@@ -3,8 +3,7 @@ package com.dnslog.web.controller;
 import com.alibaba.fastjson.JSON;
 import com.dnslog.web.entity.ResultMessage;
 import com.dnslog.web.entity.UDPInfo;
-import com.dnslog.web.mapper.UDPMapper;
-import com.dnslog.web.service.UDPService;
+import com.dnslog.web.utils.DNSLogRecorder;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,10 +15,7 @@ import java.util.List;
 @Controller
 @Slf4j
 public class WebController {
-    @Autowired
-    private UDPMapper udpMapper;
-    @Autowired
-    private UDPService udpService;
+
     @Autowired
     private UDPInfo udpInfo;
     @Autowired
@@ -31,13 +27,13 @@ public class WebController {
     @ResponseBody
     @RequestMapping("/queryDNSLog")
     public String queryDNSLog(){
-        List<UDPInfo> udpInfos=udpService.selectUDPInfo();
+       // List<UDPInfo> udpInfos=udpService.selectUDPInfo();
+        List<UDPInfo> udpInfos= DNSLogRecorder.getDNSLog();
         String json=null;
         if (!udpInfos.isEmpty()){
             resultMessage.setCode("200");
             resultMessage.setMessage("success!");
             resultMessage.setData(udpInfos);
-            log.info("result:"+json);
         }
         else {
           resultMessage.setCode("400");

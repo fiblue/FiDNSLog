@@ -1,27 +1,10 @@
 spring:
-  datasource:
-    username: root
-    password: 2022Admin!
-    url: jdbc:mysql://localhost:3306/dns?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
-    driver-class-name: com.mysql.cj.jdbc.Driver
   application:
     name: FiDNSLog
   resources:
     static-locations: classpath:/static/vue
-  redis:
-    host: 127.0.0.1
-    port: 6379
-    jedis:
-      pool:
-        max-active: 8
-        max-wait: 1
-        max-idle: 8
-        min-idle: 0
 server:
   port: 8888
-
-mybatis:
-  mapper-locations: classpath:mapper/UDPMapper.xml
 
 logging:
   file:

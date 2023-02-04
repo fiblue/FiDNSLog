@@ -28,10 +28,7 @@ public class UDPListener implements ApplicationRunner {
 
     private static int udpPort = 53;
     private static int maxUdpDataSize = 16;
-    @Autowired
-    private UDPService udpService;
-    @Autowired
-    private UDPInfo udpInfo;
+
     private void Listener(int port) throws SocketException {
         log.info("===========UDPListener Start> port:"+port+ "===========");
         DatagramSocket socket = new DatagramSocket(port);
@@ -45,7 +42,9 @@ public class UDPListener implements ApplicationRunner {
                 String ip = address.getHostAddress();
                 int targetPort = packet.getPort();
                 String content=DatatypeConverter.printHexBinary(buffer);
-                udpService.insertUDPInfo(ip,content);
+                DNSLogRecorder.setDNSLog(ip);
+                //udpService.insertUDPInfo(ip,content);
+                //String s=new String(buffer);
                 log.info("receive new UDPMessage>"+ " ip:"+ip+" port:"+targetPort+" content:"+content);
             } catch (IOException e) {
                 log.error(e.getMessage());
