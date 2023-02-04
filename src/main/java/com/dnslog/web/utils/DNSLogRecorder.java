@@ -16,8 +16,11 @@ public class DNSLogRecorder {
         if (!linkedHashMap.containsKey(ip)&&linkedHashMap.size()>=10){
             String oldIP=linkedHashMap.entrySet().stream().findFirst().get().getKey();
             linkedHashMap.remove(oldIP);
+        } else if (linkedHashMap.containsKey(ip)) {
+            //如果不删除而直接更新则无法影响先后顺序
+            linkedHashMap.remove(ip);
         }
-        linkedHashMap.put(ip,date);
+            linkedHashMap.put(ip,date);
     }
     public static List<UDPInfo> getDNSLog(){
         int index=10;
@@ -32,7 +35,7 @@ public class DNSLogRecorder {
             list.add(udpInfo);
             index--;
         }
-        list=list.stream().sorted(Comparator.comparing(UDPInfo::getId).reversed()).collect(Collectors.toList());
+        list=list.stream().sorted(Comparator.comparing(UDPInfo::getId)).collect(Collectors.toList());
         return list;
     }
 }
