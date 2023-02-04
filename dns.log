@@ -40,3 +40,25 @@
 2023-02-04 14:37:13.366  INFO 6528 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
 2023-02-04 14:37:13.367  INFO 6528 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2023-02-04 14:37:13.374  INFO 6528 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-02-04 14:37:15.274  INFO 27152 --- [main] com.dnslog.web.FiDnsLogApplication       : Starting FiDnsLogApplication on LAPTOP-KETGJ3NM with PID 27152 (D:\myproject\FiDNSLog\target\classes started by Lenovo in D:\myproject\FiDNSLog)
+2023-02-04 14:37:15.275  INFO 27152 --- [main] com.dnslog.web.FiDnsLogApplication       : The following profiles are active: dev
+2023-02-04 14:37:15.557  INFO 27152 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-02-04 14:37:15.558  INFO 27152 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-02-04 14:37:15.572  INFO 27152 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7ms. Found 0 Redis repository interfaces.
+2023-02-04 14:37:15.817  INFO 27152 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2023-02-04 14:37:15.821  INFO 27152 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-04 14:37:15.821  INFO 27152 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2023-02-04 14:37:15.868  INFO 27152 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-04 14:37:15.868  INFO 27152 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 569 ms
+2023-02-04 14:37:16.057  INFO 27152 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-02-04 14:37:16.090  INFO 27152 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/vue/index.html]
+2023-02-04 14:37:16.338  INFO 27152 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2023-02-04 14:37:16.344  INFO 27152 --- [main] com.dnslog.web.FiDnsLogApplication       : Started FiDnsLogApplication in 1.267 seconds (JVM running for 1.834)
+2023-02-04 14:37:16.344  INFO 27152 --- [main] com.dnslog.web.utils.UDPListener         : ========================线程启动==============================
+2023-02-04 14:37:16.344  INFO 27152 --- [main] com.dnslog.web.utils.UDPListener         : ===========UDPListener Start> port:53===========
+2023-02-04 14:37:21.517  INFO 27152 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-04 14:37:21.517  INFO 27152 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-02-04 14:37:21.520  INFO 27152 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-02-04 14:37:21.557  INFO 27152 --- [http-nio-8888-exec-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-02-04 14:37:21.976  INFO 27152 --- [http-nio-8888-exec-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-02-04 14:37:21.998  INFO 27152 --- [http-nio-8888-exec-4] com.dnslog.web.controller.WebController  : result:null
