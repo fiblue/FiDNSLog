@@ -16,11 +16,15 @@ public class DNSLogRecorder {
         if (!linkedHashMap.containsKey(ip)&&linkedHashMap.size()>=10){
             String oldIP=linkedHashMap.entrySet().stream().findFirst().get().getKey();
             linkedHashMap.remove(oldIP);
-        } else if (linkedHashMap.containsKey(ip)) {
+        }
+        else if (linkedHashMap.containsKey(ip)) {
             //如果不删除而直接更新则无法影响先后顺序
             linkedHashMap.remove(ip);
         }
+        if(!ip.equals("127.0.0.1")){
             linkedHashMap.put(ip,date);
+        }
+
     }
     public static List<UDPInfo> getDNSLog(){
         int index=10;
