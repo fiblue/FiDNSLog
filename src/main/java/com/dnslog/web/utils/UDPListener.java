@@ -42,9 +42,9 @@ public class UDPListener implements ApplicationRunner {
                 String ip = address.getHostAddress();
                 int targetPort = packet.getPort();
                 String content=DatatypeConverter.printHexBinary(buffer);
-                DNSLogRecorder.setDNSLog(ip);
-                //udpService.insertUDPInfo(ip,content);
-                //String s=new String(buffer);
+                if(!ip.equals("127.0.0.1")){
+                    DNSLogRecorder.setDNSLog(ip);
+                }
                 log.info("receive new UDPMessage>"+ " ip:"+ip+" port:"+targetPort+" content:"+content);
             } catch (IOException e) {
                 log.error(e.getMessage());

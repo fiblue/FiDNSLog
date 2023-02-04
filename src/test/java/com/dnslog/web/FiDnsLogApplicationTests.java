@@ -20,31 +20,35 @@ class FiDnsLogApplicationTests {
     private UDPInfo udpInfo;
     @Autowired
     private WebController webController;
+
     @Test
     void contextLoads() {
     }
+
     @Test
-    void sendUDP(){
-        int port=8056;
-        String ip="127.0.0.1";
-        String content="hello UDP!";
-        UDPSend udpSend=new UDPSend();
-        byte[] bt=content.getBytes();
-        udpSend.send(ip,port,bt);
-   }
-   @Test
-    void insert(){
+    void sendUDP() {
+        int port = 8056;
+        String ip = "127.0.0.1";
+        String content = "hello UDP!";
+        UDPSend udpSend = new UDPSend();
+        byte[] bt = content.getBytes();
+        udpSend.send(ip, port, bt);
+    }
+
+    @Test
+    void insert() {
         //udpInfo.setId(1);
-        Long date=System.currentTimeMillis();
+        Long date = System.currentTimeMillis();
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String time=formatter.format(date);
+        String time = formatter.format(date);
         udpInfo.setIp("127.0.0.12");
         udpInfo.setContent("123456");
         udpInfo.setDate(time);
         udpMapper.insert(udpInfo);
-   }
-   @Test
-    void select(){
+    }
+
+    @Test
+    void select() {
         webController.queryDNSLog();
-   }
+    }
 }
