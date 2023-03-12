@@ -55,8 +55,8 @@ public class UDPListener implements ApplicationRunner {
     }
     private static void answer(Message message,InetAddress sourceAddress,int sourcePort) throws IOException {
         Record record=message.getQuestion();
-        String domain="test00.top.";
-        InetAddress answerIpAddr = Address.getByName(domain);//域名
+        String addressIP="127.0.0.1";
+        InetAddress answerIpAddr = Address.getByAddress(addressIP);//域名
         answerIpAddr.getCanonicalHostName();
         Message answerMessage =message.clone();
         Record answer = new ARecord(record.getName(), record.getDClass(), 64, answerIpAddr);
