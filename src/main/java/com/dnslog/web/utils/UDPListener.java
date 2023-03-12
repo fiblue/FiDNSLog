@@ -1,23 +1,10 @@
 package com.dnslog.web.utils;
 
-import com.dnslog.web.entity.UDPInfo;
-import com.dnslog.web.mapper.UDPMapper;
-import com.dnslog.web.service.UDPService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
-import org.springframework.context.ApplicationListener;
-import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 import org.xbill.DNS.*;
-
-import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
-import javax.servlet.ServletRequestEvent;
-import javax.servlet.ServletRequestListener;
-import javax.servlet.annotation.WebListener;
-import javax.xml.bind.DatatypeConverter;
 import java.io.IOException;
 import java.net.*;
 
