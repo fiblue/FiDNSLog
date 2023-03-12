@@ -25,4 +25,4 @@ mybatis:
 
 logging:
   file:
-    name: dns.log
+    name: root.log

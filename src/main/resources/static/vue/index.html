@@ -15,12 +15,14 @@
         <img src="/img/logo.jpg" id="img_1">
         <table id="table_1">
             <tr id="tr_2">
-                <td id="td_1">序号</td>
+                <td id="td_1">Index</td>
+                <td id="td_2">Domain</td>
                 <td id="td_2">IP</td>
-                <td id="td_3">时间</td>
+                <td id="td_3">Date</td>
             </tr>
             <tr v-for="(item,index) in res" :key="item.index" id="tr_1">
                 <td id="td_1">{{index}}</td>
+                <td id="td_2">{{item.domain}}</td>
                 <td id="td_2">{{item.ip}}</td>
                 <td id="td_2">{{item.date}}</td>
             </tr>
@@ -86,7 +88,7 @@
 
     #td_2 {
         border-bottom: 1px solid rgb(148, 145, 145);
-        width: 200px;
+        width: 150px;
     }
 
     #td_3 {

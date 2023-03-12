@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 public class UDPInfo {
     private int id;
     private String ip;
+    private String domain;
     private String date;
     private String content;
 }
