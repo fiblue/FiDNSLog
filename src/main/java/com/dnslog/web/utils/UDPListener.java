@@ -29,7 +29,6 @@ public class UDPListener implements ApplicationRunner {
 
     private void Listener(int port) throws SocketException {
         log.info("===========UDPListener Start> port:"+port+ "===========");
-        String a="";
         while (true) {
             byte[] buffer = new byte[maxUdpDataSize];
             DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
